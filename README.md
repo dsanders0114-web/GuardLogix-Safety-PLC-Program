@@ -7,35 +7,67 @@ This project demonstrates a GuardLogix safety PLC application built in Studio 50
 The system simulates a guarded machine with:
 
 Emergency Stop
+
 Safety Light Curtain
+
 Safety Door Switch
+
 Two-Hand Control Station
+
 Manual Safety Reset
+
 Safe Run Permit
+
 Standard Machine Control Logic
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 Safety Inputs
+   
+   
    ├── ESTOP
    ├── Light Curtain (DCS)
    ├── Safety Door (DCS)
    └── Two-Hand Control (THRSe)
         │
         ▼
+   
+   
    Safety Chain Validation
         │
         ▼
+   
+   
+   
    Manual Reset Logic
         │
         ▼
+   
+   
+   
+   
    Safe Run Permit
         │
         ▼
+  
+   
    Standard Machine Control
+
+
+
+
+
+
+
+
+
+
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
    Controller
+
 ├── Standard_Task
 │   └── Std_Program
 │       └── Std_Main_LAD
@@ -43,6 +75,20 @@ Safety Inputs
 └── Safety_Task
     └── Safety_Program
         └── Safe_Main_LAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 Safety Routine Overview
@@ -78,6 +124,19 @@ Rung 7 — Safe Run Permit
 
 Final permission for machine operation
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 Two-Hand Control Configuration
@@ -85,13 +144,35 @@ Two-Hand Control Configuration
 Instruction: THRSe
 
 Discrepancy Time: 500 ms
+
+
 Enable: S_TwoHand_Enable
+
+
 Left Button: S_TH_LeftPB
+
+
 Right Button: S_TH_RightPB
+
+
 Reset: S_TH_ResetPB
+
+
 Output: S_TH_OK
 
 Both buttons must be pressed within 500 ms.
+
+
+
+
+
+
+
+
+
+
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -104,22 +185,62 @@ Restart Type: Automatic
 Discrepancy Time: 100 ms
 
 Dual channel OSSD simulation.
+
+
+
+
+
+
+
+
+
+
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 Signal Flow:
+
+
 Safety Devices
      ↓
+
+
 Safety Instructions
      ↓
+
+
 Safety Chain
      ↓
+
+
 Manual Reset
      ↓
+
+
 Safe Run Permit
      ↓
+
+
 Standard Machine Logic
      ↓
+
+
 Machine Outputs
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 Skills Demonstrated:
@@ -135,6 +256,15 @@ Safe Run Permit Design
 Standard vs Safety Separation
 Industrial Machine Safety Design
 
+
+
+
+
+
+
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 Industrial Applications:
@@ -147,6 +277,16 @@ Assembly machines
 Packaging equipment
 CNC guarding
 Automated workcells
+
+
+
+
+
+
+
+
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 Author[Daryl Sanders]
